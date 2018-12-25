@@ -1,6 +1,6 @@
-import { container } from "assets/jss/material-kit-react.jsx";
+import { container } from "assets/jss/material-kit-react";
 
-const homePageStyle = {
+const servicePricingPage = {
     container: {
         ...container,
         zIndex: "2",
@@ -41,5 +41,4 @@ const homePageStyle = {
     }
 };
 
-export default homePageStyle;
-
+export default servicePricingPage;

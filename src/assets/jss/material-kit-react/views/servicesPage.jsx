@@ -1,6 +1,6 @@
-import { container } from "assets/jss/material-kit-react.jsx";
+import { container } from "assets/jss/material-kit-react";
 
-const homePageStyle = {
+const servicesPageStyle = {
     container: {
         ...container,
         zIndex: "2",
@@ -39,7 +39,6 @@ const homePageStyle = {
             width: "100%"
         }
     }
-};
+}
 
-export default homePageStyle;
-
+export default servicesPageStyle;

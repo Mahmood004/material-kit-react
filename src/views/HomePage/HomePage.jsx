@@ -6,28 +6,24 @@ import Header from "components/Header/Header.jsx";
 import Footer from "components/Footer/Footer.jsx";
 import GridContainer from "components/Grid/GridContainer.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
+import Card from "components/Card/Card.jsx";
+import CardHeader from "components/Card/CardHeader";
+import CardBody from "components/Card/CardBody.jsx";
+import CardFooter from "components/Card/CardFooter.jsx";
 import HeaderLinks from "components/Header/HeaderLinks.jsx";
-import Parallax from "components/Parallax/Parallax.jsx";
 
 import homePageStyle from "assets/jss/material-kit-react/views/homePage.jsx";
+import image from "assets/img/bg4.jpg";
 
 class HomePage extends React.Component {
 
     render () {
         const { classes, ...rest } = this.props;
-        const imageClasses = classNames(
-            classes.imgRaised,
-            classes.imgRoundedCircle,
-            classes.imgFluid
-        );
-        const navImageClasses = classNames(
-            classes.imgRounded,
-            classes.imgGallery
-        );
         console.log(this.props);
         return (
             <div>
-                <Header 
+                <Header
+                    absolute
                     color="transparent"
                     brand="Material Kit React"
                     rightLinks={<HeaderLinks />}
@@ -38,20 +34,23 @@ class HomePage extends React.Component {
                     }}
                     {...rest}
                 />
-                <Parallax small filter image={require("assets/img/profile-bg.jpg")} />
-                <div className={classNames(classes.main, classes.mainRaised)}>
-                    <div>
-                        <div className={classes.container}>
-                            <GridContainer justify="center">
-                                <GridItem xs={12} sm={12} md={6}>
-                                    <div className={classes.home}>
-                                    </div>
-                                </GridItem>
-                            </GridContainer>
-                        </div>
+                <div
+                    className={classes.pageHeader}
+                    style={{
+                        backgroundImage: "url(" + image + ")",
+                        backgroundSize: "cover",
+                        backgroundPosition: "top center"
+                    }}
+                >
+                    <div className={classes.container}>
+                        <GridContainer justify="center">
+                            <GridItem xs={12} sm={12} md={4}>
+                                <Card></Card>
+                            </GridItem>
+                        </GridContainer>
                     </div>
+                    <Footer whiteFont />
                 </div>
-                <Footer />
             </div>
         )
     }

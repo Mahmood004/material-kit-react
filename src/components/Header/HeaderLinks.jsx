@@ -68,7 +68,7 @@ function HeaderLinks({ ...props }) {
       </ListItem>
       <ListItem className={classes.listItem}>
         <Link
-          to="/services-page"
+          to="/service-pricing-page"
           className={classes.navLink}
           color="transparent"
         >
@@ -77,7 +77,7 @@ function HeaderLinks({ ...props }) {
       </ListItem>
       <ListItem className={classes.listItem}>
         <Link
-          to="/service-pricing-page"
+          to="/services-page"
           className={classes.navLink}
           color="transparent"
         >

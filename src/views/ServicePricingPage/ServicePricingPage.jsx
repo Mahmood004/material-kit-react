@@ -1,10 +1,58 @@
-import React from 'react';
+import React from "react";
+import classNames from "classnames";
+import withStyles from "@material-ui/core/styles/withStyles";
+
+import Header from "components/Header/Header.jsx";
+import Footer from "components/Footer/Footer.jsx";
+import GridContainer from "components/Grid/GridContainer.jsx";
+import GridItem from "components/Grid/GridItem";
+import Card from "components/Card/Card.jsx";
+import CardHeader from "components/Card/CardHeader.jsx";
+import CardBody from "components/Card/CardBody.jsx";
+import CardFooter from "components/Card/CardFooter.jsx";
+import HeaderLinks from "components/Header/HeaderLinks.jsx";
+
+import servicePricingPageStyle from "assets/jss/material-kit-react/views/servicePricingPage";
+import image from "assets/img/bg2.jpg";
 
 class ServicePricingPage extends React.Component {
 
     render () {
-        return <h3>ServicePricingPage Deatils</h3>
+        const { classes, ...rest } = this.props;
+        return (
+            <div>
+                <Header
+                    absolute
+                    color="transparent"
+                    brand="Material Kit React"
+                    rightLinks={<HeaderLinks />}
+                    fixed
+                    changeColorOnScroll={{
+                        height: 200,
+                        color: "white"
+                    }}
+                    {...rest}
+                />
+                <div
+                    className={classes.pageHeader}
+                    style={{
+                        backgroundImage: "url(" + image + ")",
+                        backgroundSize: "cover",
+                        backgroundPosition: "top center"
+                    }}
+                >
+                    <div className={classes.container}>
+                        <GridContainer justify="center">
+                            <GridItem xs={12} sm={12} md={4}>
+                                <Card></Card>
+                            </GridItem>
+                        </GridContainer>
+                    </div>
+                    <Footer whiteFont />
+                </div>
+            </div>
+        )
     }
 }
 
-export default ServicePricingPage;
+export default withStyles(servicePricingPageStyle)(ServicePricingPage);
